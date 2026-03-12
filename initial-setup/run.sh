@@ -31,6 +31,9 @@ main() {
 	# Install flatpak apps
 	flatpak_install KeePassXC flathub org.keepassxc.KeePassXC
 	flatpak_install Telegram org.telegram.desktop
+	
+	# Allow me execute any command without password
+	sudo cp -v "${CURRENT_DIR}/40-run0-nopasswd.rules" /etc/polkit-1/rules.d/
 }
 
 main

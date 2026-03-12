@@ -3,3 +3,7 @@
 ```sh
 bash initial-setup/run.sh
 ```
+
+Todo
+
+1. Install font thai
