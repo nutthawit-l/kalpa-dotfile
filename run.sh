@@ -12,23 +12,33 @@ flatpak_install() {
 }
 
 main() {
-	CONTAINER_NAME=suse
-	
 	# Define color code
 	BLUE='\033[0;34m'
 	GREEN='\033[0;32m'
 	NC='\033[0m' # No color
+
+	CONTAINER_NAME="suse-template"
+	FOUND=$(podman ps -a --format "{{.Names}}" | awk -v t="$CONTAINER_NAME" '$1 == t')
 	
-	# Create suse distrobox
-	if distrobox list | grep -qw "$CONTAINER_NAME"; then
+	# Create suse-template distrobox
+	if [ -n "$FOUND" ]; then
 		echo -e "${BLUE}[Skip]${NC} Create ${CONTAINER_NAME} distrobox"
 	else
 		echo -e "${GREEN}[Run]${NC} Create ${CONTAINER_NAME} distrobox"
-		distrobox assemble create --file suse.ini
+		distrobox assemble create --file "${CONTAINER_NAME}.ini"
 	fi
-	
+
+	CONTAINER_ID=$(podman ps -a --filter "name=^${CONTAINER_NAME}$" --format "{{.ID}}")	
+	podman commit "${CONTAINER_ID}" "${CONTAINER_NAME}:latest"
+
+	#FOUND=$(podman ps -a --format "{{.Names}}" | awk -v t="$CONTAINER_NAME" '$1 == t')
+	# Create suse distrobox
+	CONTAINER_NAME="suse"
+	echo -e "${GREEN}[Run]${NC} Create ${CONTAINER_NAME} distrobox"
+	distrobox assemble create --file "${CONTAINER_NAME}.ini"
+
 	# Install flatpak apps
-	flatpak_install KeePassXC flathub org.keepassxc.KeePassXC
+	flatpak_install KeePassXC org.keepassxc.KeePassXC
 	flatpak_install Telegram org.telegram.desktop
 	
 	# Allow me execute any command without password
