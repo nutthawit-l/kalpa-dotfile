@@ -2,5 +2,11 @@
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
-    "keyboard.dispatch": "keyCode"
+    "keyboard.dispatch": "keyCode",
+    "git.confirmSync": false,
+    "zenMode.centerLayout": false, 
+    "zenMode.hideLineNumbers": false,
+    "zenMode.showTabs": "single",
+    "git.autofetch": true,
+    "zenMode.restore": true
 }
