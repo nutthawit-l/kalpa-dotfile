@@ -12,7 +12,6 @@ flatpak_install() {
 }
 
 main() {
-	CURRENT_DIR=initial-setup
 	CONTAINER_NAME=suse
 	
 	# Define color code
@@ -25,7 +24,7 @@ main() {
 		echo -e "${BLUE}[Skip]${NC} Create ${CONTAINER_NAME} distrobox"
 	else
 		echo -e "${GREEN}[Run]${NC} Create ${CONTAINER_NAME} distrobox"
-		distrobox assemble create --file "${CURRENT_DIR}/suse.ini"
+		distrobox assemble create --file suse.ini
 	fi
 	
 	# Install flatpak apps
@@ -33,7 +32,7 @@ main() {
 	flatpak_install Telegram org.telegram.desktop
 	
 	# Allow me execute any command without password
-	sudo cp -v "${CURRENT_DIR}/40-run0-nopasswd.rules" /etc/polkit-1/rules.d/
+	#sudo cp -v "${CURRENT_DIR}/40-run0-nopasswd.rules" /etc/polkit-1/rules.d/
 }
 
 main
