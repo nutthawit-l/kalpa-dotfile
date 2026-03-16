@@ -1,7 +1,11 @@
+polkit.addAdminRule(function(action, subject) {
+    return ["unix-group:wheel"];
+});
+
+/* Allow members of the wheel group to execute any actions
+ * without password authentication, similar to "sudo NOPASSWD:" */
 polkit.addRule(function(action, subject) {
-    if (action.id == "org.freedesktop.systemd1.manage-units" || action.id == "org.freedesktop.systemd1.run-system")) {
-        if (subject.user == "tie") {
-            return polkit.Result.YES;
-        }
+    if (subject.isInGroup("wheel")) {
+        return polkit.Result.YES;
     }
 });
