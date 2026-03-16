@@ -42,7 +42,9 @@ main() {
 	flatpak_install Telegram org.telegram.desktop
 	
 	# Allow me execute any command without password
-	#sudo cp -v "${CURRENT_DIR}/40-run0-nopasswd.rules" /etc/polkit-1/rules.d/
+	sudo cp -v 40-run0-nopasswd.rules /etc/polkit-1/rules.d/
+	sudo groupadd wheel
+	sudo usermod -aG wheel $USER
 }
 
 main
