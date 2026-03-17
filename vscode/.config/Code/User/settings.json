@@ -5,5 +5,8 @@
     "workbench.startupEditor": "none",
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "dev.containers.dockerPath": "podman"
+    "dev.containers.dockerPath": "podman",
+    "workbench.colorTheme": "Monokai",
+    "debug.breakpointsView.presentation": "tree",
+    "diffEditor.codeLens": true
 }
