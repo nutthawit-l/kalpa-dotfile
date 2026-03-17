@@ -10,7 +10,7 @@ transactional-update shell
 2. Install require packages
 
 ```sh
-zypper -n install curl git make neovim stow tree vi yt-dlp && \
+zypper -n install curl git make neovim python313-podman-compose stow tree vi yt-dlp && \
     # Import Microsoft GPG key
     rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
     # Add the VS Code Repository
