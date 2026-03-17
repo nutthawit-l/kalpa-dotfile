@@ -6,7 +6,7 @@ ENV HOSTNAME=opensuse-tumbleweed-template
 
 # Install additional packages and set up VS Code repository
 # We combine these into one RUN command to keep the image size down
-RUN zypper -n install curl git make neovim stow tree yt-dlp && \
+RUN zypper -n install curl git make neovim stow tree vi yt-dlp && \
     # Import Microsoft GPG key
     rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
     # Add the VS Code Repository
