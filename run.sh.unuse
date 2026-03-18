@@ -42,6 +42,7 @@ main() {
 	flatpak_install Telegram org.telegram.desktop
 	flatpak_install qView com.interversehq.qView 
 	flatpak_install GoogleChrome com.google.Chrome
+	flatpak_install Okular org.kde.okular 
 	
 	# Allow me execute any command without password
 	sudo cp -v 40-run0-nopasswd.rules /etc/polkit-1/rules.d/
