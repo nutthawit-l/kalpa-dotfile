@@ -40,6 +40,8 @@ main() {
 	# Install flatpak apps
 	flatpak_install KeePassXC org.keepassxc.KeePassXC
 	flatpak_install Telegram org.telegram.desktop
+	flatpak_install qView com.interversehq.qView 
+	flatpak_install GoogleChrome com.google.Chrome
 	
 	# Allow me execute any command without password
 	sudo cp -v 40-run0-nopasswd.rules /etc/polkit-1/rules.d/
