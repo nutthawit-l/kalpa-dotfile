@@ -10,5 +10,8 @@
     "debug.breakpointsView.presentation": "tree",
     "diffEditor.codeLens": true,
     "claudeCode.preferredLocation": "panel",
-    "workbench.externalBrowser": "firefox"
+    "workbench.externalBrowser": "firefox",
+    "dev.containers.dockerComposePath": "podman-compose",
+    "dev.containers.dockerSocketPath": "/var/run/podman.sock",
+    "dev.containers.optimisticallyLaunchDocker": false
 }
