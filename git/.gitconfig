@@ -4,6 +4,6 @@
 [init]
 	defaultBranch = main
 [credential]
-	helper = "!f() { /home/tie/.vscode-server/bin/07ff9d6178ede9a1bd12ad3399074d726ebe6e43/node /tmp/vscode-remote-containers-f14f59d2-4d81-42cb-8216-e5013aefc477.js git-credential-helper $*; }; f"
+	helper = "!f() { /home/tie/.vscode-server/bin/07ff9d6178ede9a1bd12ad3399074d726ebe6e43/node /tmp/vscode-remote-containers-ab9ace2d-e5df-4223-97b6-ae66d65c6fbd.js git-credential-helper $*; }; f"
 [safe]
 	directory = /home/tie/dominion
