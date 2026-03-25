@@ -13,7 +13,13 @@ zypper rr openSUSE-MicroOS-20260307-0
 2. Install require packages
 
 ```sh
-zypper -n install curl git make neovim python313-podman-compose stow tree yt-dlp  
+# Remove default Firefox flatpak
+flatpak uninstall --user -y org.mozilla.firefox
+
+# Remove Falkon Browser
+zypper -n rm falkon  
+
+zypper -n install curl firefox git make neovim python313-podman-compose stow tree yt-dlp  
 ```
 
 3. Add VSCode Repository
@@ -57,6 +63,16 @@ zypper in wave-terminal.rpm
 sudo cp -v 40-run0-nopasswd.rules /etc/polkit-1/rules.d/
 sudo groupadd wheel
 sudo usermod -aG wheel $USER
+```
+
+9. Install Flatpak Applications
+
+```sh
+flatpak install --user -y flathub org.keepassxc.KeePassXC
+flatpak install --user -y flathub org.telegram.desktop
+flatpak install --user -y flathub com.interversehq.qView
+flatpak install --user -y flathub com.google.Chrome
+flatpak install --user -y flathub org.kde.okular
 ```
 
 

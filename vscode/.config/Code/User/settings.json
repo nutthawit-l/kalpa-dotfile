@@ -8,5 +8,7 @@
     "dev.containers.dockerPath": "podman",
     "workbench.colorTheme": "Monokai",
     "debug.breakpointsView.presentation": "tree",
-    "diffEditor.codeLens": true
+    "diffEditor.codeLens": true,
+    "claudeCode.preferredLocation": "panel",
+    "workbench.externalBrowser": "firefox"
 }

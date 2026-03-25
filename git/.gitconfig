@@ -3,3 +3,5 @@
 	email = nutthawit-l@proton.me
 [init]
 	defaultBranch = main
+[credential]
+	helper = "!f() { /home/tie/.vscode-server/bin/07ff9d6178ede9a1bd12ad3399074d726ebe6e43/node /tmp/vscode-remote-containers-f369f59e-3cb3-461b-96e9-a1c6b1f8dfa4.js git-credential-helper $*; }; f"
